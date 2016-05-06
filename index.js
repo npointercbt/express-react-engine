@@ -43,7 +43,8 @@ module.exports = function engineFactory (engineOptions) {
             var Wrapper = require(path.join(this.root, engineOptions.wrapper));
             var wrapperInstance = React.createElement(Wrapper, {
                body: componentMarkup,
-               props: options
+               props: options,
+               component: Component
             });
 
             markup += ReactDOMServer.renderToStaticMarkup(wrapperInstance);
